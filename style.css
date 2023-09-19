@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: arial;
+    background: rgb(35, 28, 59);
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title {
+    padding: 30px;
+    text-align: center;
+    color: rgb(244, 184, 46);
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.list button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
+    background: #000;
+}
+
+.back {
+    width: 10%;
+    height: 100px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: fixed;
+    bottom: 20px;
+    scale: 0;
+    transition: 500ms linear;
+    z-index: 999;
+}
+
+.list button:focus ~ .back {
+    left: 50%;
+    transform: translateX(-50%);
+    scale: 1;
+}
+
+
+.list button:focus::after {
+    transform: scale(1);
+}
+.list button::after {   
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(34, 25, 25, 0.867);
+    color: white;
+    font-size: 22px;
+    transform: scale(0);
+    transition: 500ms linear;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.list button:nth-child(1)::after {
+    content: 'GET: Используется для запроса данных от сервера. Обычно используется для получения информации с сервера, например, при открытии веб-страницы.';
+}
+
+.list button:nth-child(2)::after {
+    content: 'POST: Используется для отправки данных на сервер. Этот метод часто используется для отправки данных формы на сервер, где данные могут быть обработаны и сохранены.';
+}
+
+.list button:nth-child(3)::after {
+    content: 'PUT: Используется для обновления данных на сервере. Обычно этот метод применяется для замены существующих данных новыми данными.';
+}
+.list button:nth-child(4)::after {
+    content: 'DELETE: Используется для удаления данных на сервере. Этот метод позволяет удалить ресурс с сервера.';
+}
+.list button:nth-child(5)::after {
+    content: 'PATCH: Используется для частичного обновления данных на сервере. Он позволяет отправить только часть данных для изменения.';
+}
+.list button:nth-child(6)::after {
+    content: 'HEAD: Аналогичен методу GET, но сервер отправляет только заголовки ответа, без тела ответа. Этот метод полезен для получения информации о ресурсе без его фактической загрузки.';
+}
+.list button:nth-child(7)::after {
+    content: 'OPTIONS: Запрос для получения информации о доступных методах и параметрах для конкретного ресурса.';
+}
+.list button:nth-child(8)::after {
+    content: 'CONNECT: Используется для установления сетевого соединения с сервером. Обычно используется для создания защищенного туннеля, например, для HTTPS.';
+}
+.list button:nth-child(9)::after {
+    content: 'TRACE: Этот метод позволяет клиенту отправить запрос на сервер, который затем возвращает клиенту все промежуточные шаги, которые запрос прошел по пути к серверу. Он используется для отладки и тестирования.';
+}
+
+.list button:nth-child(1) {
+    background: rgb(174, 229, 37);
+}
+.list button:nth-child(2) {
+    background: rgb(229, 155, 37);
+}
+.list button:nth-child(3) {
+    background: rgb(195, 98, 240);
+}
+.list button:nth-child(4) {
+    background: rgb(251, 68, 68);
+}
+.list button:nth-child(5) {
+    background: rgb(70, 142, 190);
+}
+.list button:nth-child(6) {
+    background: rgb(113, 80, 192);
+}
+.list button:nth-child(7) {
+    background: rgb(63, 202, 206);
+}
+.list button:nth-child(8) {
+    background: rgb(63, 206, 127);
+}
+.list button:nth-child(9) {
+    background: rgb(56, 227, 190);
+}
