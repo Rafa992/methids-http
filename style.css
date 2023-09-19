@@ -67,18 +67,19 @@ body {
     position: fixed;
     bottom: 20px;
     scale: 0;
+    left: -100%;
     transition: 500ms linear;
     z-index: 999;
 }
 
-.list button:focus ~ .back {
+.list button.active ~ .back {
     left: 50%;
     transform: translateX(-50%);
     scale: 1;
 }
 
 
-.list button:focus::after {
+.list button.active::after {
     transform: scale(1);
 }
 .list button::after {   
@@ -93,8 +94,8 @@ body {
     z-index: 99;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 15px;
+    align-items: flex-start;
+    padding: 40px 15px 15px; 
 }
 
 .list button:nth-child(1)::after {
